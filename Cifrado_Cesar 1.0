@@ -1,0 +1,20 @@
+#include <iostream>
+#include <string>
+using namespace std;
+/*void encriptado_cesar(char mensaje[], int clave){
+    string result = " ";
+    int tam = sizeof(mensaje) / sizeof(mensaje[0]);
+    for(int i{0}; i < tam; i++){
+        cout<< mensaje[i];
+        result += mensaje[i] +  clave;
+        }
+    cout << result;
+}*/
+
+int main()
+{
+    char palabra[]= {"HOLAAAAAA"};
+    //encriptado_cesar(palabra, 7);
+    cout << sizeof(palabra[0]);
+    return 0;
+}
