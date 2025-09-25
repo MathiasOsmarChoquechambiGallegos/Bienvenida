@@ -4,16 +4,17 @@ using namespace std;
 void encriptado_afin(char mensaje[], int clave, int mult){
     clave = clave%26;
     int tam = strlen(mensaje);
-    for(int i{0}; i < tam; i++){
+    for( int i{0}; i < tam; i++){
         char letra= mensaje[i];
-        if(letra >= 'A' && letra <= 'Z'){
-            if(a%26 == 1){
-                letra = ((mult * letra + clave)%26 + 'A');
-            }
+        if(mult%26 != 0){
+            letra = (mult * letra + 'A' +clave)%26 + 'A';
+        } else {
+            cout << mult << " no es coprimo de 26";
+            return;
         }
-        cout << letra;
+    cout << letra;
     }
-    cout << endl;
+    return;
 }
 
 int main()
@@ -25,8 +26,15 @@ int main()
         cout << palabra[i];
     }
     cout << endl;
+    int sum;
+    int mult;
+    cout << "Elija los parametro: " << endl;
+    cout << "Suma: ";
+    cin >> sum;
+    cout << "Multiplicacion: ";
+    cin >> mult;
     cout << "Palabra encriptada:" << endl;
-    encriptado_afin(palabra, 7, 5);
+    encriptado_afin(palabra, sum, mult);
 
     return 0;
 }
