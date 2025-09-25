@@ -1,0 +1,32 @@
+#include <iostream>
+#include <cstring>
+using namespace std;
+void encriptado_afin(char mensaje[], int clave, int mult){
+    clave = clave%26;
+    int tam = strlen(mensaje);
+    for(int i{0}; i < tam; i++){
+        char letra= mensaje[i];
+        if(letra >= 'A' && letra <= 'Z'){
+            if(a%26 == 1){
+                letra = ((mult * letra + clave)%26 + 'A');
+            }
+        }
+        cout << letra;
+    }
+    cout << endl;
+}
+
+int main()
+{
+    char palabra[]= "HOLVAAA";
+    int tam= strlen(palabra);
+    cout << "palabra original:" << endl;
+    for(int i{0}; i < tam; i++){
+        cout << palabra[i];
+    }
+    cout << endl;
+    cout << "Palabra encriptada:" << endl;
+    encriptado_afin(palabra, 7, 5);
+
+    return 0;
+}
