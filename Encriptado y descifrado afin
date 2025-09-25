@@ -6,7 +6,7 @@ void encriptado_afin(char mensaje[], int clave, int mult){
     int tam = strlen(mensaje);
     for( int i{0}; i < tam; i++){
         char letra= mensaje[i];
-        if(mult%26 != 0){
+        if((mult*13)%26 != 0 && mult != 13){
             letra = (mult * letra + 'A' +clave)%26 + 'A';
         } else {
             cout << mult << " no es coprimo de 26";
